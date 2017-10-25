@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 2017-10-25 16:26:02 by Hibernate Tools 5.2.5.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="futureshop" dynamic-insert="false" dynamic-update="false" mutable="true" name="com.sh.domain.User" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="user">
+        <id name="uid" type="string">
+            <column length="60" name="uid"/>
+            <generator class="assigned"/>
+        </id>
+        <property generated="never" lazy="false" name="username" optimistic-lock="true" type="string" unique="false">
+            <column length="20" name="username"/>
+        </property>
+        <property generated="never" lazy="false" name="password" optimistic-lock="true" type="string" unique="false">
+            <column length="20" name="password"/>
+        </property>
+        <property generated="never" lazy="false" name="name" optimistic-lock="true" type="string" unique="false">
+            <column length="20" name="name"/>
+        </property>
+        <property generated="never" lazy="false" name="email" optimistic-lock="true" type="string" unique="false">
+            <column length="30" name="email"/>
+        </property>
+        <property generated="never" lazy="false" name="telephone" optimistic-lock="true" type="string" unique="false">
+            <column length="20" name="telephone"/>
+        </property>
+        <property generated="never" lazy="false" name="birthday" optimistic-lock="true" type="date" unique="false">
+            <column length="10" name="birthday"/>
+        </property>
+        <property generated="never" lazy="false" name="sex" optimistic-lock="true" type="string" unique="false">
+            <column length="10" name="sex"/>
+        </property>
+        <property generated="never" lazy="false" name="state" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="state"/>
+        </property>
+        <property generated="never" lazy="false" name="code" optimistic-lock="true" type="string" unique="false">
+            <column length="64" name="code"/>
+        </property>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="addresses" optimistic-lock="true" sort="unsorted" table="address">
+            <key on-delete="noaction">
+                <column length="60" name="uid">
+                </column>
+            </key>
+            <one-to-many class="com.sh.domain.Address" embed-xml="true" not-found="exception"/>
+        </set>
+    </class>
+</hibernate-mapping>

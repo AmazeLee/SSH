@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 2017-10-25 16:26:02 by Hibernate Tools 5.2.5.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="futureshop" dynamic-insert="false" dynamic-update="false" mutable="true" name="com.sh.domain.Product" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="product">
+        <id name="pid" type="string">
+            <column length="50" name="pid"/>
+            <generator class="assigned"/>
+        </id>
+        <many-to-one class="com.sh.domain.Category" embed-xml="true" fetch="select" insert="true" name="category" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column length="32" name="cid"/>
+        </many-to-one>
+        <property generated="never" lazy="false" name="pname" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="pname"/>
+        </property>
+        <property generated="never" lazy="false" name="marketPrice" optimistic-lock="true" type="java.lang.Double" unique="false">
+            <column name="market_price" precision="22" scale="0"/>
+        </property>
+        <property generated="never" lazy="false" name="shopPrice" optimistic-lock="true" type="java.lang.Double" unique="false">
+            <column name="shop_price" precision="22" scale="0"/>
+        </property>
+        <property generated="never" lazy="false" name="pimage" optimistic-lock="true" type="string" unique="false">
+            <column length="200" name="pimage"/>
+        </property>
+        <property generated="never" lazy="false" name="pdate" optimistic-lock="true" type="date" unique="false">
+            <column length="10" name="pdate"/>
+        </property>
+        <property generated="never" lazy="false" name="isHot" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="is_hot"/>
+        </property>
+        <property generated="never" lazy="false" name="pdesc" optimistic-lock="true" type="string" unique="false">
+            <column name="pdesc"/>
+        </property>
+        <property generated="never" lazy="false" name="pflag" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="pflag"/>
+        </property>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="orderitems" optimistic-lock="true" sort="unsorted" table="orderitem">
+            <key on-delete="noaction">
+                <column length="50" name="pid"/>
+            </key>
+            <one-to-many class="com.sh.domain.Orderitem" embed-xml="true" not-found="exception"/>
+        </set>
+    </class>
+</hibernate-mapping>

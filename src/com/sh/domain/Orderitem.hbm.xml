@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 2017-10-25 16:26:02 by Hibernate Tools 5.2.5.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="futureshop" dynamic-insert="false" dynamic-update="false" mutable="true" name="com.sh.domain.Orderitem" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="orderitem">
+        <id name="itemid" type="string">
+            <column length="50" name="itemid"/>
+            <generator class="assigned"/>
+        </id>
+        <many-to-one class="com.sh.domain.Orders" embed-xml="true" fetch="select" insert="true" name="orders" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column length="50" name="oid"/>
+        </many-to-one>
+        <many-to-one class="com.sh.domain.Product" embed-xml="true" fetch="select" insert="true" name="product" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column length="50" name="pid"/>
+        </many-to-one>
+        <property generated="never" lazy="false" name="count" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="count"/>
+        </property>
+        <property generated="never" lazy="false" name="subtotal" optimistic-lock="true" type="java.lang.Double" unique="false">
+            <column name="subtotal" precision="22" scale="0"/>
+        </property>
+    </class>
+</hibernate-mapping>
