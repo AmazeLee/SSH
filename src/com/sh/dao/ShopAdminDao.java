@@ -8,11 +8,8 @@ import com.sh.domain.ShopAdmin;
  * @version V1.0  
  * @Description: 
  */
-public interface ShopAdminDao {
+public interface ShopAdminDao extends BaseDao<ShopAdmin>{
 	
 	//根据登录名查询管理员对象
 	ShopAdmin getByShopAdminCode(String admincode);
-	
-	//保存用户
-	void save(ShopAdmin sa);
 }

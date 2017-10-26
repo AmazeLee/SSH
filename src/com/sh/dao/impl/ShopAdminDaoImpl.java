@@ -15,7 +15,7 @@ import com.sh.domain.ShopAdmin;
  * @version V1.0
  * @Description:
  */
-public class ShopAdminDaoImpl extends HibernateDaoSupport implements  ShopAdminDao{
+public class ShopAdminDaoImpl extends BaseDaoImpl<ShopAdmin> implements  ShopAdminDao{
 
 	@Override
 	public ShopAdmin getByShopAdminCode(String name) {
@@ -31,13 +31,4 @@ public class ShopAdminDaoImpl extends HibernateDaoSupport implements  ShopAdminD
 			}
 		});
 	}
-
-	/* (non-Javadoc)
-	 * @see com.sh.dao.ShopAdminDao#save(com.sh.domain.ShopAdmin)
-	 */
-	@Override
-	public void save(ShopAdmin sa) {
-		getHibernateTemplate().save(sa);
-	}
-
 }

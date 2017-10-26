@@ -12,20 +12,4 @@ import com.sh.domain.Product;
  * @version V1.0  
  * @Description: 
  */
-public interface ProductDao {
-
-	/**
-	 * @param dc
-	 * @return
-	 */
-	Integer getTotalCount(DetachedCriteria dc);
-
-	/**
-	 * @param dc
-	 * @param start
-	 * @param pageSize
-	 * @return
-	 */
-	List<Product> getPageList(DetachedCriteria dc, int start, Integer pageSize);
-
-}
+public interface ProductDao extends BaseDao<Product>{}
