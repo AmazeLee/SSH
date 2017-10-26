@@ -17,8 +17,17 @@ public class ShopAdminServiceImpl implements ShopAdminService{
 	
 	@Override
 	public ShopAdmin getShopAdminByCodePassword(ShopAdmin admin) {
-		System.out.println("getShopAdminByCodePassword");
-		return null;
+		//根据登录名称查询登录用户
+		ShopAdmin sa = sad.getByShopAdminCode(admin.getName());
+		//判断用户是否存在，不存在=>抛出异常，提示用户名不存在
+		if(sa==null) {
+			throw new RuntimeException("用户名不存在");
+		}
+		//判断用户密码是否正确，不正确抛出异常，提示密码错误
+		if(!sa.getPassword().equals(admin.getPassword())) {
+			throw new RuntimeException("密码错误");
+		}
+		return sa;
 	}
 
 	@Override

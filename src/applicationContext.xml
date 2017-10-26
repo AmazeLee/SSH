@@ -80,13 +80,24 @@
 	<!-- 注意：Action对象作用范围一定是多例的，这样按此符合Struts2架构 -->
     <bean name="shopAdminAction" class="com.sh.web.action.ShopAdminAction" scope="prototype">
     	<property name="shopAdminService" ref="shopAdminService"></property>
-    </bean>                      
+    </bean> 
+     <bean name="productAction" class="com.sh.web.action.ProductAction" scope="prototype">
+    	<property name="productService" ref="productService"></property>
+    </bean> 
+                         
     <!-- service配置 -->
     <bean name="shopAdminService" class="com.sh.service.impl.ShopAdminServiceImpl">
     	<property name="sad" ref="shopAdminDao"></property>
     </bean>  
+     <bean name="productService" class="com.sh.service.impl.ProductServiceImpl">
+    	<property name="pd" ref="productDao"></property>
+    </bean>  
     <!-- dao配置 -->     
     <bean name="shopAdminDao" class="com.sh.dao.impl.ShopAdminDaoImpl">
+    	<!-- 注入sessionFactory -->
+    	<property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
+    <bean name="productDao" class="com.sh.dao.impl.ProductDaoImpl">
     	<!-- 注入sessionFactory -->
     	<property name="sessionFactory" ref="sessionFactory"></property>
     </bean>               

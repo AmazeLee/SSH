@@ -10,13 +10,23 @@
  	<constant name="struts.objectFactory" value="spring"></constant>
   	
     <package name="shop" namespace="/" extends="struts-default">  
-    
+    	
+    	<global-exception-mappings>
+    		<exception-mapping result="error" exception="java.lang.RuntimeException"></exception-mapping>
+    	</global-exception-mappings>
+    	
      	<!-- 整合方案：class属性上填写spring中Action对象的BeanName
 	    	完全由spring管理action生命周期，包括action的创建
 	    	注意：需要手动组装依赖属性	    
 	     -->
         <action name="ShopAdminAction_*" class="shopAdminAction" method="{1}">  
-            <result name="success">/success.jsp</result>  
-        </action>  
+            <result name="toHome" type="redirect">admin/home.jsp</result>
+             <result name="error">admin/index.jsp</result>   
+        </action>
+        
+        <action name="ProductAction_*" class="productAction" method="{1}">  
+            <result name="toHome" type="redirect">admin/home.jsp</result>
+             <result name="list">admin/product/list.jsp</result>   
+        </action>    
     </package>  
 </struts>  
