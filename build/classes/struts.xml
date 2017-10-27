@@ -27,6 +27,9 @@
         <action name="ProductAction_*" class="productAction" method="{1}">  
             <result name="toHome" type="redirect">admin/home.jsp</result>
              <result name="list">admin/product/list.jsp</result>   
+        </action> 
+        
+        <action name="CategoryAction_*" class="categoryAction" method="{1}">  
         </action>    
     </package>  
 </struts>  

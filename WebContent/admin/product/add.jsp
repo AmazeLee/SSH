@@ -1,4 +1,14 @@
 <%@ page language="java" pageEncoding="UTF-8"%>
+<script type="text/javascript"
+	src="${pageContext.request.contextPath }/js/jquery-1.11.3.min.js"></script>
+
+<script type="text/javascript"
+	src="${pageContext.request.contextPath }/js/my.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		loadSelect("level","category","haha");
+	});
+</script>
 <HTML>
 	<HEAD>
 		<meta http-equiv="Content-Language" content="zh-cn">
@@ -62,12 +72,9 @@
 					<td width="18%" align="center" bgColor="#f5fafe" class="ta_01">
 						所属分类：
 					</td>
-					<td class="ta_01" bgColor="#ffffff" colspan="3">
-						<select name="categorySecond.csid">
-							<option value="">大型电器</option>
-							<option value="">手机数码</option>
-							<option value="">衣帽箱包</option>
-						</select>
+					<td class="ta_01" bgColor="#ffffff" colspan="3" id="level">
+						
+						
 					</td>
 				</tr>
 				<tr>

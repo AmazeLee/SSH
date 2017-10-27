@@ -83,7 +83,10 @@
     </bean> 
      <bean name="productAction" class="com.sh.web.action.ProductAction" scope="prototype">
     	<property name="productService" ref="productService"></property>
-    </bean> 
+     </bean>
+      <bean name="categoryAction" class="com.sh.web.action.CategoryAction" scope="prototype">
+    	<property name="categoryService" ref="categoryService"></property>
+     </bean> 
                          
     <!-- service配置 -->
     <bean name="shopAdminService" class="com.sh.service.impl.ShopAdminServiceImpl">
@@ -92,12 +95,20 @@
      <bean name="productService" class="com.sh.service.impl.ProductServiceImpl">
     	<property name="pd" ref="productDao"></property>
     </bean>  
+     <bean name="categoryService" class="com.sh.service.impl.CategoryServieImpl">
+    	<property name="cd" ref="categoryDao"></property>
+    </bean> 
+    
     <!-- dao配置 -->     
     <bean name="shopAdminDao" class="com.sh.dao.impl.ShopAdminDaoImpl">
     	<!-- 注入sessionFactory -->
     	<property name="sessionFactory" ref="sessionFactory"></property>
     </bean>
     <bean name="productDao" class="com.sh.dao.impl.ProductDaoImpl">
+    	<!-- 注入sessionFactory -->
+    	<property name="sessionFactory" ref="sessionFactory"></property>
+    </bean> 
+    <bean name="categoryDao" class="com.sh.dao.impl.CategoryDaoImpl">
     	<!-- 注入sessionFactory -->
     	<property name="sessionFactory" ref="sessionFactory"></property>
     </bean>               

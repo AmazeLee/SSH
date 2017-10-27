@@ -12,6 +12,7 @@
 <script type="text/javascript"
 	src="${pageContext.request.contextPath }/js/jquery-1.11.3.min.js"></script>
 
+
 <script type="text/javascript">
 
 	function changePage(pageNum){
@@ -29,7 +30,7 @@
 	};
 	
 	function addProduct(){
-		window.location.href = "${pageContext.request.contextPath}/ProductServlet?method=addProductUI";
+		window.location.href = "${pageContext.request.contextPath}/admin/product/add.jsp";
 	} 
 
 /* function delProduct(pid){
