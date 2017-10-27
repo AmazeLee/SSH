@@ -1,5 +1,9 @@
 package com.sh.web.action;
 
+import java.io.File;
+
+import javax.servlet.jsp.PageContext;
+
 import org.apache.commons.lang3.StringUtils;
 import org.hibernate.criterion.DetachedCriteria;
 import org.hibernate.criterion.Restrictions;
@@ -9,6 +13,7 @@ import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 import com.sh.domain.Product;
 import com.sh.service.ProductService;
+import com.sh.utils.CommonsUtils;
 import com.sh.utils.PageBean;
 
 /**
@@ -24,6 +29,7 @@ public class ProductAction extends ActionSupport implements ModelDriven<Product>
 	private Integer currentPage;
 	private Integer pageSize;
 	
+	private File photo;
 	
 
 	public String list() throws Exception {
@@ -42,7 +48,22 @@ public class ProductAction extends ActionSupport implements ModelDriven<Product>
 	}
 	
 	
-	
+	public String save() throws Exception {
+		System.out.println("进入了");
+		product.setPid(CommonsUtils.getUUID());
+		System.out.println(product);
+		File file= new File("product");
+		System.out.println(file.getAbsolutePath());
+		photo.renameTo(new File("E:/Workspaces/haha.jpg"));
+		System.out.println(product);
+		//1.调用Service,保存Product对象
+		productService.save(product);
+		System.out.println(product);
+		return "toList";
+	}
+
+
+
 	public void setProductService(ProductService productService) {
 		this.productService = productService;
 	}
@@ -68,6 +89,16 @@ public class ProductAction extends ActionSupport implements ModelDriven<Product>
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
+	}
+
+
+	public File getPhoto() {
+		return photo;
+	}
+
+
+	public void setPhoto(File photo) {
+		this.photo = photo;
 	}
 
 	

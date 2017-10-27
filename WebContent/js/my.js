@@ -1,6 +1,6 @@
 //使用ajax加载类别下拉选
 	//参数1：将下拉选放入的标签id
-	//生成下拉选时候，select标签的name属性
+	//参数2：生成下拉选时候，select标签的name属性
 	//参数3：需要回显时候,选中哪个option
 	function loadSelect(positionId,selectname,selectedId){
 		//1 创建select对象,将name属性指定

@@ -33,11 +33,5 @@
         <property generated="never" lazy="false" name="pflag" optimistic-lock="true" type="java.lang.Integer" unique="false">
             <column name="pflag"/>
         </property>
-        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="orderitems" optimistic-lock="true" sort="unsorted" table="orderitem">
-            <key on-delete="noaction">
-                <column length="50" name="pid"/>
-            </key>
-            <one-to-many class="com.sh.domain.Orderitem" embed-xml="true" not-found="exception"/>
-        </set>
     </class>
 </hibernate-mapping>

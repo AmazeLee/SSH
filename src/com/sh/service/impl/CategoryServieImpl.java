@@ -19,7 +19,6 @@ public class CategoryServieImpl implements CategoryService {
 	@Override
 	public List<Category> getCategoryList() {
 		List<Category> categoryList = cd.getCategoryList();
-		System.out.println(categoryList);
 		return categoryList;
 	}
 

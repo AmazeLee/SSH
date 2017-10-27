@@ -20,7 +20,6 @@ public class Product implements java.io.Serializable {
 	private Integer isHot;
 	private String pdesc;
 	private Integer pflag;
-	private Set orderitems = new HashSet(0);
 
 	public Product() {
 	}
@@ -30,7 +29,7 @@ public class Product implements java.io.Serializable {
 	}
 
 	public Product(String pid, Category category, String pname, Double marketPrice, Double shopPrice, String pimage,
-			Date pdate, Integer isHot, String pdesc, Integer pflag, Set orderitems) {
+			Date pdate, Integer isHot, String pdesc, Integer pflag) {
 		this.pid = pid;
 		this.category = category;
 		this.pname = pname;
@@ -41,7 +40,6 @@ public class Product implements java.io.Serializable {
 		this.isHot = isHot;
 		this.pdesc = pdesc;
 		this.pflag = pflag;
-		this.orderitems = orderitems;
 	}
 
 	public String getPid() {
@@ -124,12 +122,13 @@ public class Product implements java.io.Serializable {
 		this.pflag = pflag;
 	}
 
-	public Set getOrderitems() {
-		return this.orderitems;
+	@Override
+	public String toString() {
+		return "Product [pid=" + pid + ", category=" + category + ", pname=" + pname + ", marketPrice=" + marketPrice
+				+ ", shopPrice=" + shopPrice + ", pimage=" + pimage + ", pdate=" + pdate + ", isHot=" + isHot
+				+ ", pdesc=" + pdesc + ", pflag=" + pflag + "]";
 	}
 
-	public void setOrderitems(Set orderitems) {
-		this.orderitems = orderitems;
-	}
+	
 
 }

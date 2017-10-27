@@ -38,4 +38,11 @@ public class ProductServiceImpl implements ProductService{
 	public void setPd(ProductDao pd) {
 		this.pd = pd;
 	}
+
+	//保存商品
+	@Override
+	public void save(Product product) {
+		System.out.println("service"+product);
+		pd.save(product);
+	}
 }

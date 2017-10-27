@@ -27,7 +27,6 @@ public class CategoryAction extends ActionSupport implements ModelDriven<Categor
 		
 		// 1.调用service查询类别数据
 		List<Category> list = categoryService.getCategoryList();
-		System.out.println("666666666666"+list);
 		// 2.将list转化为json数据
 		JsonConfig jsonConfig=new JsonConfig();
 	    jsonConfig.setExcludes(new String[]{"products"});//去除级联关系

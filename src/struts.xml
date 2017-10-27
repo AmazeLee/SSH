@@ -3,6 +3,12 @@
     "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"  
     "http://struts.apache.org/dtds/struts-2.3.dtd">  
 <struts>  
+
+	<!-- 指定struts2是否以开发模式运行
+			1.热加载主配置.(不需要重启即可生效)
+			2.提供更多错误信息输出,方便开发时的调试
+	 -->
+	<constant name="struts.devMode" value="true"></constant>
   	
   	<!-- # struts.objectFactory = spring 将action的创建交给spring容器	
 		 struts.objectFactory.spring.autoWire = name spring负责装配Action依赖属性
@@ -26,7 +32,12 @@
         
         <action name="ProductAction_*" class="productAction" method="{1}">  
             <result name="toHome" type="redirect">admin/home.jsp</result>
-             <result name="list">admin/product/list.jsp</result>   
+            <result name="list">admin/product/list.jsp</result>  
+            <result name="toList" type="redirectAction">
+            	<param name="namespace">/</param>
+            	<param name="actionName">ProductAction_list</param>
+            </result>
+           
         </action> 
         
         <action name="CategoryAction_*" class="categoryAction" method="{1}">  

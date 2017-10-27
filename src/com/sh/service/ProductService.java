@@ -2,6 +2,7 @@ package com.sh.service;
 
 import org.hibernate.criterion.DetachedCriteria;
 
+import com.sh.domain.Product;
 import com.sh.utils.PageBean;
 
 /**
@@ -20,5 +21,11 @@ public interface ProductService {
 	 * @return
 	 */
 	PageBean getPageBean(DetachedCriteria dc, Integer currentPage, Integer pageSize);
+
+	/**
+	 * 保存商品
+	 * @param product
+	 */
+	void save(Product product);
 
 }

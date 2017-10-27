@@ -35,7 +35,9 @@
             <tx:method name="delete*" isolation="REPEATABLE_READ" propagation="REQUIRED" read-only="false" />  
             <tx:method name="remove*" isolation="REPEATABLE_READ" propagation="REQUIRED" read-only="false" />  
             <tx:method name="get*" isolation="REPEATABLE_READ" propagation="REQUIRED" read-only="true" />  
-            <tx:method name="find*" isolation="REPEATABLE_READ" propagation="REQUIRED" read-only="true" />  
+            <tx:method name="find*" isolation="REPEATABLE_READ" propagation="REQUIRED" read-only="true" />
+            <!-- 以上走不了就走这个 -->
+            <tx:method name="*" isolation="REPEATABLE_READ" propagation="REQUIRED" read-only="false" />    
         </tx:attributes>  
     </tx:advice>  
       
