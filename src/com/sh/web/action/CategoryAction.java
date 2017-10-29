@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.apache.struts2.ServletActionContext;
 
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 import com.sh.domain.Category;
@@ -37,6 +38,14 @@ public class CategoryAction extends ActionSupport implements ModelDriven<Categor
 		ServletActionContext.getResponse().setContentType("application/json;charset=utf-8");
 		ServletActionContext.getResponse().getWriter().write(json);
 		return null;//告诉struts2不需要进行结果处理
+	}
+
+	public String allCategory() throws Exception {
+		// 1.调用service查询类别数据
+		List<Category> categoryList = categoryService.getCategoryList();
+		// 2.将categoryList放入request域，转发到页面显示
+		ActionContext.getContext().put("categoryList",categoryList);
+		return "list";
 	}
 
 	@Override

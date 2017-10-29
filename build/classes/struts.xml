@@ -41,7 +41,8 @@
            
         </action> 
         
-        <action name="CategoryAction_*" class="categoryAction" method="{1}">  
+        <action name="CategoryAction_*" class="categoryAction" method="{1}">
+        	<result name="list">admin/category/list.jsp</result>    
         </action>    
     </package>  
 </struts>  
