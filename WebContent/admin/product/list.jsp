@@ -114,7 +114,7 @@
 							<td style="cursor: hand; height: 22px" align="center" width="18%">${vs.count }</td>
 							<td style="cursor: hand; height: 22px" align="center" width="17%"><img
 								width="40" height="45"
-								src="${pageContext.request.contextPath }/${pro.pimage }">
+								src="${pro.pimage }">
 							</td>
 							<td style="cursor: hand; height: 22px" align="center" width="17%">${pro.pname }</td>
 							<td style="cursor: hand; height: 22px" align="center" width="17%">${pro.shopPrice }</td>

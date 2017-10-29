@@ -6,7 +6,7 @@
 	src="${pageContext.request.contextPath }/js/my.js"></script>
 <script type="text/javascript">
 	$(document).ready(function() {
-		loadSelect("level", "category", "haha");
+		loadSelect("level", "category.cid");
 	});
 </script>
 <HTML>

@@ -52,7 +52,7 @@ public class Category implements java.io.Serializable {
 
 	@Override
 	public String toString() {
-		return "Category [cname=" + cname + "]";
+		return "Category [cid=" + cid + ", cname=" + cname + "]";
 	}
 	
 }

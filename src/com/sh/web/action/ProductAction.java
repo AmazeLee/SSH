@@ -1,10 +1,13 @@
 package com.sh.web.action;
 
 import java.io.File;
+import java.util.Date;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.jsp.PageContext;
 
 import org.apache.commons.lang3.StringUtils;
+import org.apache.struts2.ServletActionContext;
 import org.hibernate.criterion.DetachedCriteria;
 import org.hibernate.criterion.Restrictions;
 
@@ -50,11 +53,21 @@ public class ProductAction extends ActionSupport implements ModelDriven<Product>
 	
 	public String save() throws Exception {
 		System.out.println("进入了");
+		//设置商品编号
 		product.setPid(CommonsUtils.getUUID());
+		//获取当前时间设置为上架日期
+		product.setPdate(new Date());
+		//设置pflag
+		product.setPflag(0);
 		System.out.println(product);
-		File file= new File("product");
-		System.out.println(file.getAbsolutePath());
-		photo.renameTo(new File("E:/Workspaces/haha.jpg"));
+		
+		
+		HttpServletRequest request = ServletActionContext.getRequest();
+		String realPath = request.getServletContext().getRealPath("products/1");
+		String uuid = CommonsUtils.getUUID();
+		photo.renameTo(new File(realPath+"/"+uuid+".jpg"));
+		product.setPimage("products/1/"+uuid+".jpg");
+		System.out.println(realPath);
 		System.out.println(product);
 		//1.调用Service,保存Product对象
 		productService.save(product);
