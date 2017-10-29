@@ -45,4 +45,21 @@ public class ProductServiceImpl implements ProductService{
 		System.out.println("service"+product);
 		pd.save(product);
 	}
+
+	//根据pid查找商品
+	public Product getById(String pid) {
+		return pd.getById(pid);
+	}
+
+	//修改商品
+	@Override
+	public void update(Product product) {
+		pd.update(product);
+	}
+
+	//删除商品
+	@Override
+	public void delById(String pid) {
+		pd.delete(pid);	
+	}
 }

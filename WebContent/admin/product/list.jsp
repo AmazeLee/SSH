@@ -33,13 +33,13 @@
 		window.location.href = "${pageContext.request.contextPath}/admin/product/add.jsp";
 	} 
 
-/* function delProduct(pid){
+function delProduct(pid){
 	var isDel = confirm("您确认要删除吗？");
 	if(isDel){
 		//要删除
-		location.href = "${pageContext.request.contextPath}/adminDelProduct?pid="+pid;
+		location.href = "${pageContext.request.contextPath}/ProductAction_delProduct?pid="+pid;
 	}
-} */
+}
 </script>
 </HEAD>
 <body>
@@ -120,7 +120,7 @@
 							<td style="cursor: hand; height: 22px" align="center" width="17%">${pro.shopPrice }</td>
 							<td style="cursor: hand; height: 22px" align="center" width="17%">${pro.isHot==1?"是":"否" }</td>
 							<td align="center" style="height: 22px"><a
-								href="${ pageContext.request.contextPath }/adminUpdateProductUI?pid=${pro.pid}">
+								href="${ pageContext.request.contextPath}/ProductAction_updateProductUI?pid=${pro.pid}">
 									<img src="${pageContext.request.contextPath}/images/i_edit.gif"
 									border="0" style="cursor: hand">
 							</a></td>

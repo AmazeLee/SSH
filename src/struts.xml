@@ -37,6 +37,7 @@
             	<param name="namespace">/</param>
             	<param name="actionName">ProductAction_list</param>
             </result>
+            <result name="productui" >admin/product/edit.jsp</result>
            
         </action> 
         

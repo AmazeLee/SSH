@@ -28,4 +28,23 @@ public interface ProductService {
 	 */
 	void save(Product product);
 
+	/**
+	 * 根据id获得商品对象
+	 * @param pid
+	 * @return
+	 */
+	Product getById(String pid);
+
+	/**
+	 * 修改商品
+	 * @param product
+	 */
+	void update(Product product);
+
+	/**
+	 * 删除商品
+	 * @param pid
+	 */
+	void delById(String pid);
+
 }
