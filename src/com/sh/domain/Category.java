@@ -11,7 +11,6 @@ public class Category implements java.io.Serializable {
 
 	private String cid;
 	private String cname;
-	private Set products = new HashSet(0);
 
 	public Category() {
 	}
@@ -20,10 +19,11 @@ public class Category implements java.io.Serializable {
 		this.cid = cid;
 	}
 
-	public Category(String cid, String cname, Set products) {
+
+	public Category(String cid, String cname) {
+		super();
 		this.cid = cid;
 		this.cname = cname;
-		this.products = products;
 	}
 
 	public String getCid() {
@@ -40,14 +40,6 @@ public class Category implements java.io.Serializable {
 
 	public void setCname(String cname) {
 		this.cname = cname;
-	}
-
-	public Set getProducts() {
-		return this.products;
-	}
-
-	public void setProducts(Set products) {
-		this.products = products;
 	}
 
 	@Override

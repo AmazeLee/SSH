@@ -12,7 +12,7 @@ import com.sh.service.CategoryService;
  * @version V1.0  
  * @Description: 
  */
-public class CategoryServieImpl implements CategoryService {
+public class CategoryServiceImpl implements CategoryService {
 	
 	private CategoryDao cd;
 	
@@ -24,6 +24,16 @@ public class CategoryServieImpl implements CategoryService {
 
 	public void setCd(CategoryDao cd) {
 		this.cd = cd;
+	}
+
+	@Override
+	public Category getById(String cid) {
+		return cd.getById(cid);
+	}
+
+	@Override
+	public void update(Category category) {
+		cd.update(category);	
 	}
 	
 }

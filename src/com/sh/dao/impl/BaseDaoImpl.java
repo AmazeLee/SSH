@@ -48,8 +48,6 @@ public class BaseDaoImpl<T> extends HibernateDaoSupport implements BaseDao<T> {
 	@Override
 	public T getById(Serializable id) {
 		
-		
-		
 		return (T) getHibernateTemplate().get(clazz, id);
 	}
 

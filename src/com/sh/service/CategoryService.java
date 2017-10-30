@@ -17,4 +17,8 @@ public interface CategoryService {
 	 */
 	List<Category> getCategoryList();
 
+	Category getById(String cid);
+
+	void update(Category category);
+
 }

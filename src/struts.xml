@@ -42,7 +42,12 @@
         </action> 
         
         <action name="CategoryAction_*" class="categoryAction" method="{1}">
-        	<result name="list">admin/category/list.jsp</result>    
+        	<result name="list">admin/category/list.jsp</result> 
+        	 <result name="categoryui" >admin/category/edit.jsp</result> 
+        	 <result name="tolist" type="redirectAction">
+        	 	<param name="namespace">/</param>
+        	 	<param name="actionName">CategoryAction_all</param>
+        	 </result>  
         </action>    
     </package>  
 </struts>  

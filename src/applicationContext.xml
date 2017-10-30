@@ -97,7 +97,7 @@
      <bean name="productService" class="com.sh.service.impl.ProductServiceImpl">
     	<property name="pd" ref="productDao"></property>
     </bean>  
-     <bean name="categoryService" class="com.sh.service.impl.CategoryServieImpl">
+     <bean name="categoryService" class="com.sh.service.impl.CategoryServiceImpl">
     	<property name="cd" ref="categoryDao"></property>
     </bean> 
     

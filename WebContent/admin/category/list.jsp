@@ -52,7 +52,7 @@
 								<td style="CURSOR: hand; HEIGHT: 22px" align="center"
 									width="17%">${cate.cname}</td>
 								<td align="center" style="HEIGHT: 22px"><a
-									href="${ pageContext.request.contextPath }/admin/category/edit.jsp">
+									href="${ pageContext.request.contextPath}/CategoryAction_updateCategoryUI?cid=${cate.cid}">
 										<img
 										src="${pageContext.request.contextPath}/images/i_edit.gif"
 										border="0" style="CURSOR: hand">

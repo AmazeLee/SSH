@@ -9,11 +9,11 @@
         <property generated="never" lazy="false" name="cname" optimistic-lock="true" type="string" unique="false">
             <column length="20" name="cname"/>
         </property>
-        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="products" optimistic-lock="true" sort="unsorted" table="product">
+        <!-- <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="products" optimistic-lock="true" sort="unsorted" table="product">
             <key on-delete="noaction">
                 <column length="32" name="cid"/>
             </key>
             <one-to-many class="com.sh.domain.Product" embed-xml="true" not-found="exception"/>
-        </set>
+        </set> -->
     </class>
 </hibernate-mapping>

@@ -46,7 +46,7 @@
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/log4j-api-2.3.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/log4j-core-2.3.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/mysql-connector-java-5.1.44-bin.jar"/>
-	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/ognl-3.0.21.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/ognl-3.0.21.jar" sourcepath="C:/Users/Administrator/.m2/repository/ognl/ognl/3.0.21/ognl-3.0.21-sources.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/spring-aop-4.3.9.RELEASE.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/spring-aspects-4.3.9.RELEASE.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/spring-beans-4.3.9.RELEASE.jar"/>
@@ -61,6 +61,6 @@
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/standard.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/struts2-core-2.3.34.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/struts2-spring-plugin-2.3.34.jar"/>
-	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/xwork-core-2.3.34.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/xwork-core-2.3.34.jar" sourcepath="C:/Users/Administrator/.m2/repository/org/apache/struts/xwork/xwork-core/2.3.34/xwork-core-2.3.34-sources.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
