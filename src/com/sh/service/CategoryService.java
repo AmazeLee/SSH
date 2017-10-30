@@ -21,4 +21,8 @@ public interface CategoryService {
 
 	void update(Category category);
 
+	void save(Category category);
+
+	void delById(String cid);
+
 }

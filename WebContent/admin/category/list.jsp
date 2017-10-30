@@ -8,9 +8,20 @@
 	rel="stylesheet" type="text/css" />
 <script language="javascript"
 	src="${pageContext.request.contextPath}/js/public.js"></script>
+<script type="text/javascript"
+	src="${pageContext.request.contextPath }/js/jquery-1.11.3.min.js"></script>
 <script type="text/javascript">
 	function addCategory() {
 		window.location.href = "${pageContext.request.contextPath}/admin/category/add.jsp";
+	}
+
+	function delCategory(cid) {
+		var isDel = confirm("您确认要删除吗？");
+		if (isDel) {
+			//要删除
+			location.href = "${pageContext.request.contextPath}/CategoryAction_delCategory?cid="
+					+ cid;
+		}
 	}
 </script>
 </HEAD>
@@ -58,8 +69,9 @@
 										border="0" style="CURSOR: hand">
 								</a></td>
 
-								<td align="center" style="HEIGHT: 22px"><a href=""> <img
-										src="${pageContext.request.contextPath}/images/i_del.gif"
+								<td align="center" style="HEIGHT: 22px"><a
+									href="javascript:void(0);" onclick="delCategory('${cate.cid}')">
+										<img src="${pageContext.request.contextPath}/images/i_del.gif"
 										width="16" height="16" border="0" style="CURSOR: hand">
 								</a></td>
 							</tr>

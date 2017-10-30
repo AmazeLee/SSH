@@ -35,5 +35,16 @@ public class CategoryServiceImpl implements CategoryService {
 	public void update(Category category) {
 		cd.update(category);	
 	}
+
+	@Override
+	public void save(Category category) {
+		cd.save(category);	
+	}
+
+	@Override
+	public void delById(String cid) {
+		cd.delete(cid);
+		
+	}
 	
 }

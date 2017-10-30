@@ -9,6 +9,7 @@ import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 import com.sh.domain.Category;
 import com.sh.service.CategoryService;
+import com.sh.utils.CommonsUtils;
 
 import net.sf.json.JSONArray;
 import net.sf.json.JsonConfig;
@@ -74,6 +75,32 @@ public class CategoryAction extends ActionSupport implements ModelDriven<Categor
 		System.out.println(666666);
 		return "tolist";
 	}
+	
+
+	/**
+	 * 添加类别
+	 * @return
+	 * @throws Exception
+	 */
+	public String add() throws Exception {
+		//设置类别编号
+		category.setCid(CommonsUtils.getUUID());
+		categoryService.save(category);
+		return "tolist";
+	}
+	
+	
+	/**
+	 * 删除类别
+	 * @return
+	 * @throws Exception
+	 */
+	public String delCategory() throws Exception {
+		System.out.println("进入了");
+		categoryService.delById(category.getCid());
+		System.out.println("666");
+		return "tolist";
+	}
 
 	@Override
 	public Category getModel() {
@@ -83,5 +110,5 @@ public class CategoryAction extends ActionSupport implements ModelDriven<Categor
 	public void setCategoryService(CategoryService categoryService) {
 		this.categoryService = categoryService;
 	}
-
+	
 }
